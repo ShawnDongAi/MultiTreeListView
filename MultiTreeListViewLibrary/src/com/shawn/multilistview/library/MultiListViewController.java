@@ -58,6 +58,9 @@ public class MultiListViewController {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					final int position, long id) {
+				if (position == titleAdapter.getCount() - 1) {
+					return;
+				}
 				listContainer.clearChildRemoveCallback();
 				for (int i = listContainer.getChildCount() - 1; i > position; i--) {
 					listContainer.removeChildList(i);
